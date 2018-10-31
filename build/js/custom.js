@@ -3284,8 +3284,8 @@ if (typeof NProgress != 'undefined') {
 
 			  echartLine.setOption({
 				title: {
-				  text: 'Line Graph',
-				  subtext: 'Subtitle'
+				  text: '实时温湿度',
+				  subtext: '采集频率：1小时'
 				},
 				tooltip: {
 				  trigger: 'axis'
@@ -3293,21 +3293,11 @@ if (typeof NProgress != 'undefined') {
 				legend: {
 				  x: 220,
 				  y: 40,
-				  data: ['Intent', 'Pre-order', 'Deal']
+				  data: ['温度', '湿度']
 				},
 				toolbox: {
 				  show: true,
 				  feature: {
-					magicType: {
-					  show: true,
-					  title: {
-						line: 'Line',
-						bar: 'Bar',
-						stack: 'Stack',
-						tiled: 'Tiled'
-					  },
-					  type: ['line', 'bar', 'stack', 'tiled']
-					},
 					restore: {
 					  show: true,
 					  title: "Restore"
@@ -3322,13 +3312,13 @@ if (typeof NProgress != 'undefined') {
 				xAxis: [{
 				  type: 'category',
 				  boundaryGap: false,
-				  data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				  data: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00']
 				}],
 				yAxis: [{
 				  type: 'value'
 				}],
 				series: [{
-				  name: 'Deal',
+				  name: '温度',
 				  type: 'line',
 				  smooth: true,
 				  itemStyle: {
@@ -3338,9 +3328,9 @@ if (typeof NProgress != 'undefined') {
 					  }
 					}
 				  },
-				  data: [10, 12, 21, 54, 260, 830, 710]
+				  data: [10, 12, 21, 34, 31, 34, 31]
 				}, {
-				  name: 'Pre-order',
+				  name: '湿度',
 				  type: 'line',
 				  smooth: true,
 				  itemStyle: {
@@ -3350,19 +3340,7 @@ if (typeof NProgress != 'undefined') {
 					  }
 					}
 				  },
-				  data: [30, 182, 434, 791, 390, 30, 10]
-				}, {
-				  name: 'Intent',
-				  type: 'line',
-				  smooth: true,
-				  itemStyle: {
-					normal: {
-					  areaStyle: {
-						type: 'default'
-					  }
-					}
-				  },
-				  data: [1320, 1132, 601, 234, 120, 90, 20]
+				  data: [30, 65, 43, 79, 39, 30, 60]
 				}]
 			  });
 

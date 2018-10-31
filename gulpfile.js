@@ -49,12 +49,12 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', function() {
   // Watch .html files
-  gulp.watch('production/*.html', browserSync.reload);
+  gulp.watch('production/*.html',  gulp.parallel(browserSync.reload));
   // Watch .js files
-  gulp.watch('src/js/*.js', ['scripts']);
+  gulp.watch('src/js/*.js', gulp.parallel('scripts'));
   // Watch .scss files
-  gulp.watch('src/scss/*.scss', ['sass', 'sass-minify']);
+  gulp.watch('src/scss/*.scss', gulp.parallel('sass', 'sass-minify'));
 });
 
 // Default Task
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', gulp.parallel('browser-sync', 'watch'));
